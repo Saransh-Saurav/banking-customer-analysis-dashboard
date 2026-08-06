@@ -229,14 +229,5 @@ Python was used to perform:
 
 ---
 
-# 🚀 Future Improvements
-
-- Connect Power BI to a live SQL Server database.
-- Automate scheduled data refresh.
-- Add predictive analytics for customer segmentation.
-- Deploy dashboards using Power BI Service.
-- Expand with additional banking KPIs.
-
----
 
 ⭐ If you found this project useful, consider giving it a star!
