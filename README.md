@@ -313,6 +313,6 @@ Includes:
 
 ## 👨‍💻 Author
 
-**Saransh-Saurav**
+**[Saransh-Saurav](https://github.com/Saransh-Saurav)**
 
 If you found this project useful, consider giving it a ⭐.
