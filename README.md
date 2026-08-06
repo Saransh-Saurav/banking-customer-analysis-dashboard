@@ -1,35 +1,62 @@
 # 🏦 Banking Customer Analysis Dashboard
 
-> An end-to-end Banking Analytics project built using **SQL Server, Python, and Power BI** to transform raw banking data into actionable business insights through interactive dashboards.
+An end-to-end Banking Analytics project that demonstrates the complete data analytics workflow, from database creation and data preparation in **SQL Server**, to data exploration in **Python**, and finally building an interactive business intelligence dashboard in **Power BI**.
 
-![Home Dashboard](Images/Home.png)
-
----
-
-## 📖 Overview
-
-This project analyzes customer banking data to provide insights into loans, deposits, customer engagement, and financial performance.
-
-The workflow covers the complete analytics pipeline:
-
-- SQL Server for data storage and preparation
-- Python for exploratory data analysis (EDA)
-- Power BI for dashboard development
-- DAX for business metrics and KPI calculations
+The project provides insights into customer demographics, loans, deposits, banking relationships, customer engagement, and financial performance through interactive visualizations and business KPIs.
 
 ---
 
-## 🎯 Business Objective
+## 📌 Project Overview
 
-Banks handle thousands of customer records across multiple financial products. The objective of this project is to provide decision-makers with an interactive dashboard to monitor:
+Financial institutions manage large volumes of customer and transactional data. Extracting meaningful insights from this data is essential for understanding customer behavior, monitoring financial products, and supporting business decisions.
 
-- Customer demographics
-- Loan portfolio
-- Deposit portfolio
-- Banking relationships
-- Customer engagement
-- Investment advisor performance
-- Income segmentation
+This project follows a complete analytics pipeline:
+
+- Database design and data preparation using SQL Server
+- Data extraction from SQL Server into Python
+- Exploratory Data Analysis (EDA)
+- Interactive dashboard development using Power BI
+- Business KPI creation using DAX
+
+---
+
+# 📊 Analytics Workflow
+
+```text
+CSV Dataset
+      │
+      ▼
+SQL Server
+(Database Creation & Data Cleaning)
+      │
+      ▼
+Python
+(SQL Server Connection & Data Loading)
+      │
+      ▼
+Python
+(Exploratory Data Analysis)
+      │
+      ▼
+Power BI
+(Interactive Dashboard & Business Insights)
+```
+
+---
+
+# 🎯 Business Objective
+
+The objective of this project is to help banking stakeholders analyze customer information, lending activities, deposits, and financial performance through interactive dashboards.
+
+The dashboard enables users to:
+
+- Analyze customer demographics
+- Monitor loan and deposit portfolios
+- Compare banking relationships
+- Segment customers by income
+- Evaluate customer engagement
+- Analyze investment advisor performance
+- Monitor important banking KPIs
 
 ---
 
@@ -37,57 +64,132 @@ Banks handle thousands of customer records across multiple financial products. T
 
 | Technology | Purpose |
 |------------|---------|
-| SQL Server | Data Storage & Cleaning |
-| Python | Exploratory Data Analysis |
+| SQL Server | Database Design & Data Preparation |
+| Python | Data Loading & Exploratory Data Analysis |
 | Pandas | Data Manipulation |
-| NumPy | Numerical Analysis |
-| Matplotlib | Visualization |
+| NumPy | Numerical Computing |
+| Matplotlib | Data Visualization |
 | Seaborn | Statistical Visualization |
 | Power BI | Dashboard Development |
-| DAX | KPI & Business Metrics |
+| DAX | Business Metrics & KPI Calculations |
 
 ---
 
 # 📂 Repository Structure
 
-```
+```text
 banking-customer-analysis-dashboard/
 
 │
 ├── Dashboard/
-│     Banking Dashboard.pbix
+│   └── Banking Dashboard.pbix
 │
 ├── Data/
-│     Banking_csv_file.csv
+│   └── Banking_csv_file.csv
 │
 ├── SQL/
-│   ├── Create_Table.sql
-│   ├── Inserting_Data.sql
-│   ├── Updating_Data.sql
-│   └── Debugging_Insertion_Error.sql
+│   ├── 01_Create_Table.sql
+│   ├── 02_Insert_Data.sql
+│   ├── 03_Update_Data.sql
+│   └── 04_Debug_Insertion_Error.sql
 │
 ├── Python/
-│     Banking_EDA.ipynb
+│   ├── 01_SQL_Server_Data_Loading.ipynb
+│   └── 02_Exploratory_Data_Analysis.ipynb
 │
 ├── Images/
-│     Home.png
-│     Loan Analysis.png
-│     Deposit Analysis.png
-│     Summary.png
+│   ├── Home.png
+│   ├── Loan_Analysis.png
+│   ├── Deposit_Analysis.png
+│   ├── Summary.png
+│   └── Drill_Through.png
 │
 ├── Report/
-│     Banking Report.pdf
+│   └── Banking_Report.pdf
 │
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
+# 🗄 SQL Server
+
+The SQL component of the project covers the complete database preparation workflow.
+
+### Database Tasks
+
+- Created the banking database schema
+- Defined appropriate data types
+- Imported CSV data into SQL Server
+- Cleaned and transformed raw data
+- Fixed data type conversion issues
+- Added calculated attributes
+- Updated categorical values
+- Prepared clean tables for analysis
+
+SQL Scripts Included:
+
+- Create database tables
+- Import data
+- Update and transform data
+- Debug insertion and conversion errors
+
+---
+
+# 🐍 Python
+
+Python was used in two stages of the analytics workflow.
+
+## 1. SQL Server Connection & Data Loading
+
+The first notebook demonstrates how Python connects with SQL Server using **pyodbc**.
+
+Tasks performed:
+
+- Connect to SQL Server
+- Execute SQL queries
+- Retrieve data into Pandas DataFrames
+- Validate imported data
+- Prepare data for analysis
+
+Libraries used:
+
+- pyodbc
+- SQLAlchemy
+- Pandas
+
+---
+
+## 2. Exploratory Data Analysis (EDA)
+
+The second notebook focuses on understanding and analyzing the dataset before dashboard development.
+
+Analysis performed:
+
+- Missing value analysis
+- Descriptive statistics
+- Categorical analysis
+- Numerical analysis
+- Income band creation
+- Distribution analysis
+- Correlation analysis
+- Data visualization
+
+Libraries used:
+
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+
+---
+
 # 📊 Dashboard Pages
 
-## 🏠 Home
+## 🏠 Home Dashboard
 
-Provides a high-level overview of banking performance through key financial KPIs.
+Provides an overview of the banking business through high-level KPIs.
 
 ### KPIs
 
@@ -95,8 +197,8 @@ Provides a high-level overview of banking performance through key financial KPIs
 - Total Loan
 - Total Deposit
 - Total Fees
-- Total Credit Card Amount
-- Total Savings Account Amount
+- Total Credit Cards
+- Savings Account Amount
 
 ![Home](Images/Home.png)
 
@@ -104,132 +206,113 @@ Provides a high-level overview of banking performance through key financial KPIs
 
 ## 💰 Loan Analysis
 
-Analyzes the bank's lending portfolio through interactive visualizations.
+Analyzes customer lending patterns.
 
-### Insights
+Features:
 
-- Loan distribution by banking relationship
-- Loan contribution by nationality
-- Business lending
-- Credit card balance
-- Income band analysis
-- Customer engagement analysis
+- Loan by Banking Relationship
+- Loan by Nationality
+- Loan by Income Band
+- Business Lending
+- Credit Card Balance
+- Customer Engagement Analysis
 
-![Loan Analysis](Images/Loan Analysis.png)
+![Loan Analysis](Images/Loan_Analysis.png)
 
 ---
 
 ## 💳 Deposit Analysis
 
-Provides a comprehensive analysis of customer deposits.
+Analyzes customer deposit behavior.
 
-### Insights
+Features:
 
 - Bank Deposits
 - Savings Accounts
 - Checking Accounts
 - Foreign Currency Accounts
-- Deposits by nationality
-- Deposits by income band
-- Deposits by engagement timeframe
+- Deposit by Income Band
+- Deposit by Nationality
+- Deposit by Engagement Timeframe
 
-![Deposit Analysis](Images/Deposit Analysis.png)
+![Deposit Analysis](Images/Deposit_Analysis.png)
 
 ---
 
 ## 📈 Summary Dashboard
 
-Combines the most important banking KPIs into a single executive dashboard.
+Executive overview of the most important banking KPIs.
 
-Includes
+Includes:
 
-- Client Count
+- Total Clients
 - Total Loan
 - Total Deposit
-- Total Fees
-- Business Lending
 - Bank Deposit
-- Foreign Currency
+- Business Lending
+- Checking Account Amount
+- Foreign Currency Amount
 - Customer Engagement
 
 ![Summary](Images/Summary.png)
 
 ---
 
-## 🔎 Drill Through
+## 🔍 Drill Through
 
-Detailed customer-level analysis.
+Customer-level analysis with detailed records.
 
-Includes
+Includes:
 
-- Customer Name
+- Customer Information
 - Investment Advisor
 - Engagement Length
 - Credit Card Balance
 - Total Fees
-- Nationality Analysis
+- Nationality-wise Analysis
 
-![Drill Through](Images/Drill Through.png)
-
----
-
-# 🧹 Data Preparation
-
-The dataset was prepared before visualization using SQL Server and Python.
-
-Performed transformations include:
-
-- Data type corrections
-- Feature engineering
-- Income Band creation
-- Processing Fee calculation
-- Customer Engagement calculation
-- Engagement Length calculation
-- Data validation
+![Drill Through](Images/Drill_Through.png)
 
 ---
 
-# 📐 DAX Measures
-
-Key business measures include:
+# 📐 Key DAX Measures
 
 - Total Clients
 - Total Loan
 - Total Deposit
 - Total Fees
 - Bank Loan
-- Bank Deposit
 - Business Lending
+- Bank Deposit
 - Savings Account
 - Checking Account
-- Credit Card Balance
 - Foreign Currency Amount
+- Credit Card Balance
 - Engagement Length
-
----
-
-# 📈 Exploratory Data Analysis
-
-Python was used to perform:
-
-- Missing Value Analysis
-- Descriptive Statistics
-- Distribution Analysis
-- Categorical Analysis
-- Correlation Analysis
-- Data Visualization
 
 ---
 
 # 💡 Key Insights
 
-- Private Banking customers contribute significantly to the loan portfolio.
-- Mid-income customers account for the largest share of deposits.
-- Loan and deposit patterns vary across customer nationalities.
-- Customer engagement provides additional context for understanding banking relationships.
-- Interactive filters enable dynamic exploration across gender, banking relationship, investment advisor, and time period.
+- Customer segmentation enables comparison of banking products across income groups.
+- Loan and deposit portfolios can be analyzed by banking relationship, nationality, and customer engagement.
+- Interactive filtering allows users to explore banking performance dynamically.
+- Executive KPIs provide a consolidated overview of customer and financial metrics.
 
 ---
 
+# 🚀 Future Enhancements
 
-⭐ If you found this project useful, consider giving it a star!
+- Connect to a live SQL Server database.
+- Automate data refresh.
+- Add predictive analytics using machine learning.
+- Publish dashboards through Power BI Service.
+- Expand the dashboard with additional banking KPIs and trend analysis.
+
+---
+
+## 👨‍💻 Author
+
+**Saransh-Saurav**
+
+If you found this project useful, consider giving it a ⭐.
