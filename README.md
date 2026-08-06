@@ -61,8 +61,10 @@ banking-customer-analysis-dashboard/
 │     Banking_csv_file.csv
 │
 ├── SQL/
-│     create_tables.sql
-│     data_cleaning.sql
+│   ├── Create_Table.sql
+│   ├── Inserting_Data.sql
+│   ├── Updating_Data.sql
+│   └── Debugging_Insertion_Error.sql
 │
 ├── Python/
 │     Banking_EDA.ipynb
